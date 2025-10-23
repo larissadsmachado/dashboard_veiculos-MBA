@@ -1,51 +1,81 @@
+#app.py
+
 import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-st.set_page_config(page_title="Análise da valorização de veículos novos e usados no Brasil", page_icon="🚘", layout="wide")
-st.title("🚘 Análise da valorização de veículos novos e usados no Brasil")
+# Configuração inicial
+st.set_page_config(page_title="Valorização de Veículos no Brasil", page_icon="🚘", layout="wide")
+st.title("🚘 Análise da valorização de veículos novos e usados (2020–2024)")
 
+# Função para carregar dados
 @st.cache_data
 def load_data():
-    df = pd.read_csv("vehicles_data.csv")
-    df["mes"] = pd.to_datetime(df["mes"])
+    df = pd.read_csv("tabela-fipe-historico-precos.csv", sep=",")
+    df = df[['marca', 'modelo', 'anoModelo', 'mesReferencia', 'anoReferencia', 'valor']]
+    df['data'] = pd.to_datetime(df['anoReferencia'].astype(str) + '-' + df['mesReferencia'].astype(str) + '-01')
+    df = df[df['valor'] > 0]
     return df
 
 df = load_data()
 
-st.sidebar.header("Filtros")
-modelos = st.sidebar.multiselect("Modelos", df["modelo"].unique(), df["modelo"].unique())
-tipos = st.sidebar.multiselect("Tipo (Novo/Usado)", df["tipo"].unique(), df["tipo"].unique())
+# SIDEBAR – filtros
+st.sidebar.header("🔎 Filtros")
+marcas_disponiveis = sorted(df['marca'].unique())
+anos_disponiveis = sorted(df['anoModelo'].unique())
 
-df_filtrado = df[(df["modelo"].isin(modelos)) & (df["tipo"].isin(tipos))]
+marcas_default = [m for m in ["Toyota", "Volkswagen", "Honda"] if m in marcas_disponiveis]
+anos_default = [a for a in [2020, 2021, 2022, 2023, 2024] if a in anos_disponiveis]
 
-st.subheader("📊 Indicadores Gerais")
+marcas = st.sidebar.multiselect("Marcas", marcas_disponiveis, default=marcas_default)
+anos = st.sidebar.multiselect("Ano do modelo", anos_disponiveis, default=anos_default)
+
+df_filtrado = df[df['marca'].isin(marcas) & df['anoModelo'].isin(anos)]
+
+# KPIs
+st.subheader("📊 Indicadores principais")
 col1, col2, col3 = st.columns(3)
-col1.metric("Modelos analisados", len(df_filtrado["modelo"].unique()))
-col2.metric("Preço médio geral", f"R$ {df_filtrado['preco'].mean():,.0f}")
-col3.metric("Período analisado", f"{df_filtrado['mes'].min().year} - {df_filtrado['mes'].max().year}")
+col1.metric("Modelos avaliados", df_filtrado['modelo'].nunique())
+col2.metric("Preço médio (R$)", f"{df_filtrado['valor'].mean():,.2f}")
+col3.metric("Período", f"{df_filtrado['data'].min().year}–{df_filtrado['data'].max().year}")
 
-st.subheader("📈 Evolução dos Preços ao Longo do Tempo")
-fig1 = px.line(df_filtrado, x="mes", y="preco", color="modelo", line_dash="tipo", title="Evolução de preços: novos x usados")
+# EVOLUÇÃO DE PREÇOS
+st.markdown("### 📈 Evolução do preço médio por modelo")
+modelo = st.selectbox("Selecione o modelo", sorted(df_filtrado['modelo'].unique()))
+df_modelo = df_filtrado[df_filtrado['modelo'] == modelo].sort_values('data')
+
+fig1 = px.line(df_modelo, x='data', y='valor', color='marca',
+               markers=True, title=f"Evolução de preço do {modelo}")
 st.plotly_chart(fig1, use_container_width=True)
+st.caption("➡️ Mostra a flutuação de preços ao longo do tempo, útil para identificar valorização ou quedas sazonais.")
 
-st.subheader("⚖️ Comparativo Novo x Usado (Preço Médio por Modelo)")
-comparativo = df_filtrado.groupby(["modelo", "tipo"])["preco"].mean().reset_index()
-fig2 = px.bar(comparativo, x="modelo", y="preco", color="tipo", barmode="group", title="Preço médio por modelo e tipo de veículo")
+# TOP 10 VALORIZADOS
+st.markdown("### 🏆 Top 10 modelos mais valorizados")
+df_valoriz = df_filtrado.groupby('modelo').agg(
+    valor_inicial=('valor', 'first'),
+    valor_final=('valor', 'last')
+).reset_index()
+df_valoriz['% valorização'] = ((df_valoriz['valor_final'] - df_valoriz['valor_inicial']) / df_valoriz['valor_inicial']) * 100
+df_top = df_valoriz.sort_values('% valorização', ascending=False).head(10)
+
+fig2 = px.bar(df_top, x='modelo', y='% valorização', color='% valorização', text='% valorização',
+              title="Top 10 modelos que mais valorizaram (%)")
 st.plotly_chart(fig2, use_container_width=True)
+st.caption("➡️ Ajuda a entender quais modelos mantêm valor — bom para investimento ou revenda.")
 
-st.subheader("🏆 Modelos que Mais Valorizaram (Usados)")
-df_usado = df[df["tipo"] == "USADO"]
-df_valoriz = df_usado.groupby("modelo").apply(lambda x: (x.iloc[-1]["preco"] - x.iloc[0]["preco"]) / x.iloc[0]["preco"] * 100).reset_index()
-df_valoriz.columns = ["modelo", "valorizacao_%"]
-df_valoriz = df_valoriz.sort_values(by="valorizacao_%", ascending=False)
-st.dataframe(df_valoriz.style.format({"valorizacao_%": "{:.1f}%"}))
+# NOVO x USADO
+st.markdown("### ⚖️ Comparativo entre veículos novos e usados")
+df_filtrado['tipo'] = df_filtrado['anoModelo'].apply(lambda x: 'Novo' if x >= 2024 else 'Usado')
+df_tipo = df_filtrado.groupby('tipo')['valor'].mean().reset_index()
 
-fig3 = px.bar(df_valoriz, x="modelo", y="valorizacao_%", color="modelo", title="Valorização percentual dos carros usados (2020–2024)")
+fig3 = px.bar(df_tipo, x='tipo', y='valor', color='tipo', title="Preço médio: novos vs usados")
 st.plotly_chart(fig3, use_container_width=True)
+st.caption("➡️ Mostra o quanto o mercado de usados vem se aproximando dos novos em valor médio.")
 
-st.markdown("""
-### 🧭 Conclusão
-Durante a pandemia e o período pós-crise dos semicondutores, observamos uma **valorização anormal dos carros usados**, especialmente em modelos populares, que chegaram a ter aumentos de até 30%.  
-A estabilização dos preços começa a ocorrer a partir de 2023, quando a produção de novos veículos se normaliza.
+# INSIGHT FINAL
+st.info("""
+💡 **Conclusão:**  
+Entre 2020 e 2024, houve valorização atípica em modelos populares usados, 
+reflexo da escassez de semicondutores e aumento de demanda pós-pandemia.  
+Esse padrão sugere que o mercado de usados ganhou força e estabilidade no período analisado.
 """)

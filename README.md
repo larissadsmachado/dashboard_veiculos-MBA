@@ -14,5 +14,4 @@ Permite comparar modelos, tipos (novo/USADO), acompanhar evolução de preços e
 ## Como rodar
 1. Instalar dependências:
 
-```bash
-pip install -r requirements.txt
+
