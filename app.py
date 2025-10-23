@@ -1,12 +1,10 @@
-#app.py
-
 import pandas as pd
 import streamlit as st
 import plotly.express as px
 
 # Configuração inicial
 st.set_page_config(page_title="Valorização de Veículos no Brasil", page_icon="🚘", layout="wide")
-st.title("🚘 Análise da valorização de veículos novos e usados (2020–2024)")
+st.title("🚘 Análise da valorização de veículos brasileiros (2019–2025)")
 
 # Função para carregar dados
 @st.cache_data
@@ -15,20 +13,19 @@ def load_data():
     df = df[['marca', 'modelo', 'anoModelo', 'mesReferencia', 'anoReferencia', 'valor']]
     df['data'] = pd.to_datetime(df['anoReferencia'].astype(str) + '-' + df['mesReferencia'].astype(str) + '-01')
     df = df[df['valor'] > 0]
+    # Filtra marcas brasileiras
+    marcas_brasileiras = ["Chevrolet", "Volkswagen", "Fiat", "Ford", "Renault", "Honda", "Toyota", "Nissan", "Hyundai", "Jeep"]
+    df = df[df['marca'].isin(marcas_brasileiras)]
+    # Filtra anos de referência de 2019 a 2025
+    df = df[df['anoModelo'].between(2019, 2025)]
     return df
 
 df = load_data()
 
 # SIDEBAR – filtros
 st.sidebar.header("🔎 Filtros")
-marcas_disponiveis = sorted(df['marca'].unique())
-anos_disponiveis = sorted(df['anoModelo'].unique())
-
-marcas_default = [m for m in ["Toyota", "Volkswagen", "Honda"] if m in marcas_disponiveis]
-anos_default = [a for a in [2020, 2021, 2022, 2023, 2024] if a in anos_disponiveis]
-
-marcas = st.sidebar.multiselect("Marcas", marcas_disponiveis, default=marcas_default)
-anos = st.sidebar.multiselect("Ano do modelo", anos_disponiveis, default=anos_default)
+marcas = st.sidebar.multiselect("Marcas", sorted(df['marca'].unique()), default=sorted(df['marca'].unique()))
+anos = st.sidebar.multiselect("Ano do modelo", sorted(df['anoModelo'].unique()), default=sorted(df['anoModelo'].unique()))
 
 df_filtrado = df[df['marca'].isin(marcas) & df['anoModelo'].isin(anos)]
 
@@ -63,19 +60,13 @@ fig2 = px.bar(df_top, x='modelo', y='% valorização', color='% valorização', 
 st.plotly_chart(fig2, use_container_width=True)
 st.caption("➡️ Ajuda a entender quais modelos mantêm valor — bom para investimento ou revenda.")
 
-# NOVO x USADO
-st.markdown("### ⚖️ Comparativo entre veículos novos e usados")
-df_filtrado['tipo'] = df_filtrado['anoModelo'].apply(lambda x: 'Novo' if x >= 2024 else 'Usado')
-df_tipo = df_filtrado.groupby('tipo')['valor'].mean().reset_index()
 
-fig3 = px.bar(df_tipo, x='tipo', y='valor', color='tipo', title="Preço médio: novos vs usados")
-st.plotly_chart(fig3, use_container_width=True)
-st.caption("➡️ Mostra o quanto o mercado de usados vem se aproximando dos novos em valor médio.")
+
 
 # INSIGHT FINAL
 st.info("""
 💡 **Conclusão:**  
-Entre 2020 e 2024, houve valorização atípica em modelos populares usados, 
-reflexo da escassez de semicondutores e aumento de demanda pós-pandemia.  
-Esse padrão sugere que o mercado de usados ganhou força e estabilidade no período analisado.
+Entre 2019 e 2025, os modelos mais recentes tendem a manter maior valor médio, 
+enquanto os modelos antigos mostram maior variação de preço.  
+Essa análise ajuda a entender a valorização e depreciação no mercado brasileiro de veículos.
 """)
