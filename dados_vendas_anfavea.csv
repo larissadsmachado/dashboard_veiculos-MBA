@@ -1,33 +1,157 @@
-mes_ano,marca,modelo,combustivel,regiao,estado,cidade,vendas,preco_medio,faturamento,ano_fabricacao
-2023-01,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1500,85000.00,127500000.00,2023
-2023-01,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1200,65000.00,78000000.00,2023
-2023-01,Chevrolet,Onix,Gasolina,Sudeste,RJ,Rio de Janeiro,900,70000.00,63000000.00,2023
-2023-01,Fiat,Argo,Flex,Sudeste,MG,Belo Horizonte,800,60000.00,48000000.00,2023
-2023-01,Hyundai,HB20,Flex,Sudeste,SP,Campinas,750,68000.00,51000000.00,2023
-2023-02,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1450,85500.00,123975000.00,2023
-2023-02,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1180,65200.00,76936000.00,2023
-2023-02,Chevrolet,Onix,Gasolina,Sudeste,RJ,Rio de Janeiro,920,70500.00,64860000.00,2023
-2023-02,Fiat,Argo,Flex,Nordeste,BA,Salvador,600,61000.00,36600000.00,2023
-2023-02,Hyundai,HB20,Flex,Nordeste,CE,Fortaleza,550,68500.00,37675000.00,2023
-2023-03,Fiat,Strada,Diesel,Sul,PR,Curitiba,1300,86000.00,111800000.00,2023
-2023-03,Volkswagen,Gol,Gasolina,Sul,RS,Porto Alegre,1100,65800.00,72380000.00,2023
-2023-03,Chevrolet,Onix,Gasolina,Centro-Oeste,DF,Brasília,850,71000.00,60350000.00,2023
-2023-03,Fiat,Argo,Flex,Centro-Oeste,GO,Goiânia,700,61500.00,43050000.00,2023
-2023-03,Hyundai,HB20,Flex,Sudeste,SP,São Paulo,800,69000.00,55200000.00,2023
-2023-04,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1600,86500.00,138400000.00,2023
-2023-04,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1250,66000.00,82500000.00,2023
-2023-04,Chevrolet,Onix,Gasolina,Sudeste,MG,Belo Horizonte,950,71500.00,67925000.00,2023
-2023-04,Fiat,Argo,Flex,Nordeste,PE,Recife,650,62000.00,40300000.00,2023
-2023-04,Hyundai,HB20,Flex,Nordeste,BA,Salvador,600,69500.00,41700000.00,2023
-2023-01,Toyota,Corolla,Gasolina,Sudeste,SP,São Paulo,400,120000.00,48000000.00,2023
-2023-01,Honda,Civic,Gasolina,Sudeste,SP,São Paulo,350,130000.00,45500000.00,2023
-2023-02,Toyota,Corolla,Gasolina,Sudeste,RJ,Rio de Janeiro,380,121000.00,45980000.00,2023
-2023-02,Honda,Civic,Gasolina,Sudeste,MG,Belo Horizonte,320,131000.00,41920000.00,2023
-2023-03,Toyota,Corolla,Gasolina,Sul,PR,Curitiba,420,122000.00,51240000.00,2023
-2023-03,Honda,Civic,Gasolina,Sul,RS,Porto Alegre,300,132000.00,39600000.00,2023
-2023-04,Toyota,Corolla,Gasolina,Centro-Oeste,DF,Brasília,450,123000.00,55350000.00,2023
-2023-04,Honda,Civic,Gasolina,Centro-Oeste,GO,Goiânia,280,133000.00,37240000.00,2023
-2022-01,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1400,82000.00,114800000.00,2022
-2022-01,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1100,62000.00,68200000.00,2022
-2022-02,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1350,82500.00,111375000.00,2022
-2022-02,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1050,62500.00,65625000.00,2022
+mes_ano,mes,ano,marca,modelo,categoria,combustivel,regiao,estado,vendas,preco_medio,faturamento
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,12580,98500,1239130000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,11250,78900,887625000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9850,115000,1132750000
+2024-01,1,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8760,69900,612324000
+2024-01,1,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7650,145000,1109250000
+2024-01,1,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6540,132000,863280000
+2024-01,1,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5430,52900,287247000
+2024-01,1,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4320,121000,522720000
+2024-01,1,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3980,61900,246362000
+2024-01,1,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3650,65900,240535000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Sudeste,Rio de Janeiro,4580,99500,455710000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,Rio de Janeiro,4120,79900,329188000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,Rio de Janeiro,3650,117000,427050000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Sudeste,Minas Gerais,5120,97500,499200000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,Minas Gerais,4780,77900,372362000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,Minas Gerais,4210,116000,488360000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Sul,Paraná,3890,96500,375385000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Sul,Paraná,3450,76900,265305000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Sul,Paraná,2980,114000,339720000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Sul,Rio Grande do Sul,3210,95500,306555000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Sul,Rio Grande do Sul,2870,75900,217833000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Sul,Rio Grande do Sul,2540,113000,287020000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Nordeste,Bahia,2980,97500,290550000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Nordeste,Bahia,2650,78900,208985000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Nordeste,Bahia,2310,115000,265650000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Nordeste,Pernambuco,2670,96500,257655000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Nordeste,Pernambuco,2340,77900,182286000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Nordeste,Pernambuco,2010,114000,229140000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Nordeste,Ceará,2450,95500,233975000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Nordeste,Ceará,2120,76900,163028000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Nordeste,Ceará,1870,113000,211310000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Centro-Oeste,Distrito Federal,1980,98500,195030000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Centro-Oeste,Distrito Federal,1760,78900,138864000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Centro-Oeste,Distrito Federal,1540,115000,177100000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Centro-Oeste,Goiás,1870,97500,182325000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Centro-Oeste,Goiás,1650,79900,131835000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Centro-Oeste,Goiás,1430,117000,167310000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Norte,Pará,1560,99500,155220000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Norte,Pará,1340,80900,108406000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Norte,Pará,1120,118000,132160000
+2024-01,1,2024,Fiat,Strada,Picape,Flex,Norte,Amazonas,890,101500,90335000
+2024-01,1,2024,Hyundai,HB20,Hatchback,Flex,Norte,Amazonas,670,81900,54873000
+2024-01,1,2024,Volkswagen,T-Cross,SUV,Flex,Norte,Amazonas,540,119000,64260000
+2024-02,2,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,11890,99000,1177110000
+2024-02,2,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10680,79400,847992000
+2024-02,2,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9320,116000,1081120000
+2024-02,2,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8210,70400,577984000
+2024-02,2,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7210,146000,1052660000
+2024-02,2,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6150,133000,817950000
+2024-02,2,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5120,53400,273408000
+2024-02,2,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4070,122000,496540000
+2024-02,2,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3750,62400,234000000
+2024-02,2,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3420,66400,227088000
+2024-02,2,2024,Fiat,Strada,Picape,Flex,Sudeste,Rio de Janeiro,4320,100000,432000000
+2024-02,2,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,Rio de Janeiro,3890,80400,312756000
+2024-02,2,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,Rio de Janeiro,3450,118000,407100000
+2024-03,3,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,13250,99500,1318375000
+2024-03,3,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,11890,79900,950011000
+2024-03,3,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,10420,117000,1219140000
+2024-03,3,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,9250,70900,655825000
+2024-03,3,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,8090,147000,1189230000
+2024-03,3,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6920,134000,927280000
+2024-03,3,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5780,53900,311542000
+2024-03,3,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4560,123000,560880000
+2024-03,3,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,4210,62900,264809000
+2024-03,3,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3870,66900,258903000
+2024-04,4,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,12890,100000,1289000000
+2024-04,4,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,11560,80400,929424000
+2024-04,4,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,10120,118000,1194160000
+2024-04,4,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8980,71400,641172000
+2024-04,4,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7850,148000,1161800000
+2024-04,4,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6720,135000,907200000
+2024-04,4,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5620,54400,305728000
+2024-04,4,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4430,124000,549320000
+2024-04,4,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,4080,63400,258672000
+2024-04,4,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3750,67400,252750000
+2024-05,5,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,12450,100500,1251225000
+2024-05,5,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,11180,80900,904462000
+2024-05,5,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9780,119000,1163820000
+2024-05,5,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8650,71900,621935000
+2024-05,5,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7580,149000,1129420000
+2024-05,5,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6480,136000,881280000
+2024-05,5,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5420,54900,297558000
+2024-05,5,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4280,125000,535000000
+2024-05,5,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3950,63900,252405000
+2024-05,5,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3620,67900,245798000
+2024-06,6,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,11980,101000,1209980000
+2024-06,6,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10750,81400,875050000
+2024-06,6,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9410,120000,1129200000
+2024-06,6,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8320,72400,602368000
+2024-06,6,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7290,150000,1093500000
+2024-06,6,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6250,137000,856250000
+2024-06,6,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5230,55400,289742000
+2024-06,6,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4120,126000,519120000
+2024-06,6,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3810,64400,245364000
+2024-06,6,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3490,68400,238716000
+2024-07,7,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,11560,101500,1173340000
+2024-07,7,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10380,81900,850122000
+2024-07,7,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9080,121000,1098680000
+2024-07,7,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8010,72900,583929000
+2024-07,7,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7020,151000,1060020000
+2024-07,7,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6030,138000,832140000
+2024-07,7,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5050,55900,282295000
+2024-07,7,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,3980,127000,505460000
+2024-07,7,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3670,64900,238183000
+2024-07,7,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3370,68900,232193000
+2024-08,8,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,12180,102000,1242360000
+2024-08,8,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10930,82400,900632000
+2024-08,8,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9560,122000,1166320000
+2024-08,8,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8430,73400,618762000
+2024-08,8,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7390,152000,1123280000
+2024-08,8,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6340,139000,881260000
+2024-08,8,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5310,56400,299484000
+2024-08,8,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4180,128000,535040000
+2024-08,8,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3860,65400,252444000
+2024-08,8,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3540,69400,245676000
+2024-09,9,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,11890,102500,1218725000
+2024-09,9,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10670,82900,884543000
+2024-09,9,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9340,123000,1148820000
+2024-09,9,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8250,73900,609675000
+2024-09,9,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7220,153000,1104660000
+2024-09,9,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6190,140000,866600000
+2024-09,9,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5180,56900,294742000
+2024-09,9,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4080,129000,526320000
+2024-09,9,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3760,65900,247784000
+2024-09,9,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3450,69900,241155000
+2024-10,10,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,11520,103000,1186560000
+2024-10,10,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10340,83400,862356000
+2024-10,10,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9050,124000,1122200000
+2024-10,10,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8000,74400,595200000
+2024-10,10,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7010,154000,1079540000
+2024-10,10,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6010,141000,847410000
+2024-10,10,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5030,57400,288722000
+2024-10,10,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,3960,130000,514800000
+2024-10,10,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3650,66400,242360000
+2024-10,10,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3350,70400,235840000
+2024-11,11,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,11980,103500,1239930000
+2024-11,11,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,10750,83900,901925000
+2024-11,11,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,9410,125000,1176250000
+2024-11,11,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8320,74900,623168000
+2024-11,11,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7290,155000,1129950000
+2024-11,11,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6250,142000,887500000
+2024-11,11,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5230,57900,302817000
+2024-11,11,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4120,131000,539720000
+2024-11,11,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,3810,66900,254889000
+2024-11,11,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3490,70900,247441000
+2024-12,12,2024,Fiat,Strada,Picape,Flex,Sudeste,São Paulo,12850,104000,1336400000
+2024-12,12,2024,Hyundai,HB20,Hatchback,Flex,Sudeste,São Paulo,11530,84400,973132000
+2024-12,12,2024,Volkswagen,T-Cross,SUV,Flex,Sudeste,São Paulo,10090,126000,1271340000
+2024-12,12,2024,Chevrolet,Onix,Hatchback,Flex,Sudeste,São Paulo,8920,75400,672568000
+2024-12,12,2024,Jeep,Compass,SUV,Flex,Sudeste,São Paulo,7810,156000,1218360000
+2024-12,12,2024,Toyota,Corolla,Sedan,Gasolina,Sudeste,São Paulo,6680,143000,955240000
+2024-12,12,2024,Renault,Kwid,Hatchback,Flex,Sudeste,São Paulo,5590,58400,326456000
+2024-12,12,2024,Honda,HR-V,SUV,Flex,Sudeste,São Paulo,4410,132000,582120000
+2024-12,12,2024,Volkswagen,Gol,Hatchback,Gasolina,Sudeste,São Paulo,4070,67400,274318000
+2024-12,12,2024,Fiat,Argo,Hatchback,Flex,Sudeste,São Paulo,3730,71400,266322000

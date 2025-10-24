@@ -4,15 +4,14 @@ import streamlit as st
 @st.cache_data
 def load_data():
     """
-    Carrega os dados de vendas de automóveis
+    Carrega os dados de vendas de automóveis da ANFAVEA
     """
     try:
-        df = pd.read_csv('dados_vendas_anfavea.csv', parse_dates=['mes_ano'])
-        df['ano'] = df['mes_ano'].dt.year
-        df['mes'] = df['mes_ano'].dt.month
+        df = pd.read_csv('dados_anfavea_2024.csv')
+        df['mes_ano'] = pd.to_datetime(df['mes_ano'])
         return df
     except FileNotFoundError:
-        st.error("Arquivo 'dados_vendas_anfavea.csv' não encontrado.")
+        st.error("Arquivo 'dados_anfavea_2024.csv' não encontrado.")
         return pd.DataFrame()
 
 def get_filters(df):
@@ -24,6 +23,8 @@ def get_filters(df):
     regioes = sorted(df['regiao'].unique())
     estados = sorted(df['estado'].unique())
     combustiveis = sorted(df['combustivel'].unique())
+    categorias = sorted(df['categoria'].unique())
     anos = sorted(df['ano'].unique())
+    meses = sorted(df['mes'].unique())
     
-    return marcas, modelos, regioes, estados, combustiveis, anos
+    return marcas, modelos, regioes, estados, combustiveis, categorias, anos, meses
