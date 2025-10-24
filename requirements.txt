@@ -1,4 +1,3 @@
-# requirements.txt (mesmo de antes, openpyxl já incluso)
 streamlit
 pandas
 plotly
