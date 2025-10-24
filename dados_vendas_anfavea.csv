@@ -1,0 +1,33 @@
+mes_ano,marca,modelo,combustivel,regiao,estado,cidade,vendas,preco_medio,faturamento,ano_fabricacao
+2023-01,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1500,85000.00,127500000.00,2023
+2023-01,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1200,65000.00,78000000.00,2023
+2023-01,Chevrolet,Onix,Gasolina,Sudeste,RJ,Rio de Janeiro,900,70000.00,63000000.00,2023
+2023-01,Fiat,Argo,Flex,Sudeste,MG,Belo Horizonte,800,60000.00,48000000.00,2023
+2023-01,Hyundai,HB20,Flex,Sudeste,SP,Campinas,750,68000.00,51000000.00,2023
+2023-02,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1450,85500.00,123975000.00,2023
+2023-02,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1180,65200.00,76936000.00,2023
+2023-02,Chevrolet,Onix,Gasolina,Sudeste,RJ,Rio de Janeiro,920,70500.00,64860000.00,2023
+2023-02,Fiat,Argo,Flex,Nordeste,BA,Salvador,600,61000.00,36600000.00,2023
+2023-02,Hyundai,HB20,Flex,Nordeste,CE,Fortaleza,550,68500.00,37675000.00,2023
+2023-03,Fiat,Strada,Diesel,Sul,PR,Curitiba,1300,86000.00,111800000.00,2023
+2023-03,Volkswagen,Gol,Gasolina,Sul,RS,Porto Alegre,1100,65800.00,72380000.00,2023
+2023-03,Chevrolet,Onix,Gasolina,Centro-Oeste,DF,Brasília,850,71000.00,60350000.00,2023
+2023-03,Fiat,Argo,Flex,Centro-Oeste,GO,Goiânia,700,61500.00,43050000.00,2023
+2023-03,Hyundai,HB20,Flex,Sudeste,SP,São Paulo,800,69000.00,55200000.00,2023
+2023-04,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1600,86500.00,138400000.00,2023
+2023-04,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1250,66000.00,82500000.00,2023
+2023-04,Chevrolet,Onix,Gasolina,Sudeste,MG,Belo Horizonte,950,71500.00,67925000.00,2023
+2023-04,Fiat,Argo,Flex,Nordeste,PE,Recife,650,62000.00,40300000.00,2023
+2023-04,Hyundai,HB20,Flex,Nordeste,BA,Salvador,600,69500.00,41700000.00,2023
+2023-01,Toyota,Corolla,Gasolina,Sudeste,SP,São Paulo,400,120000.00,48000000.00,2023
+2023-01,Honda,Civic,Gasolina,Sudeste,SP,São Paulo,350,130000.00,45500000.00,2023
+2023-02,Toyota,Corolla,Gasolina,Sudeste,RJ,Rio de Janeiro,380,121000.00,45980000.00,2023
+2023-02,Honda,Civic,Gasolina,Sudeste,MG,Belo Horizonte,320,131000.00,41920000.00,2023
+2023-03,Toyota,Corolla,Gasolina,Sul,PR,Curitiba,420,122000.00,51240000.00,2023
+2023-03,Honda,Civic,Gasolina,Sul,RS,Porto Alegre,300,132000.00,39600000.00,2023
+2023-04,Toyota,Corolla,Gasolina,Centro-Oeste,DF,Brasília,450,123000.00,55350000.00,2023
+2023-04,Honda,Civic,Gasolina,Centro-Oeste,GO,Goiânia,280,133000.00,37240000.00,2023
+2022-01,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1400,82000.00,114800000.00,2022
+2022-01,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1100,62000.00,68200000.00,2022
+2022-02,Fiat,Strada,Diesel,Sudeste,SP,São Paulo,1350,82500.00,111375000.00,2022
+2022-02,Volkswagen,Gol,Gasolina,Sudeste,SP,São Paulo,1050,62500.00,65625000.00,2022
