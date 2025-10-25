@@ -175,7 +175,7 @@ with col4:
     with st.expander("ℹ️ Segmentação por Categoria"):
         st.markdown("""
         **Objetivo:** Entender preferências por tipo de veículo.
-        **Insights:** Picapes e SUVs dominam o mercado
+        **Insights:** Hatchback e SUVs dominam o mercado
         """)
 
 st.markdown("---")
